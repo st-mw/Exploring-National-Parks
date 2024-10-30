@@ -58,19 +58,23 @@ const HighlightGallery = () => {
         {highlightedParks.map((park) => (
           <div key={park.id} className="slide">
             <h2>{park.fullName}</h2>
-            {/* <p>{park.description}</p> */}
+            <p>{park.description ? park.description.substring(0, 100) + '...' : 'No description available'}</p>
             {park.images && park.images.length > 0 && (
-              <img src={park.images.length < 2 ? park.images[0].url : park.images[1].url}
-              alt="slide-image"
-              onError={(e) => {
-                e.target.src = defaultImage;
-              }} />
+              <img
+                src={park.images.length < 2 ? park.images[0].url : park.images[1].url}
+                alt="slide-image"
+                onError={(e) => {
+                  e.target.src = defaultImage;
+                }}
+              />
             )}
-            <Link to = {`/ParkInfo?parkCode=${park.parkCode}`}><button className="more-info">Learn More</button></Link>
+            <Link to={`/ParkInfo?parkCode=${park.parkCode}`}>
+              <button className="more-info">Learn More</button>
+            </Link>
           </div>
         ))}
       </Slider>
-      </div>
+    </div>
   );
 };
 
