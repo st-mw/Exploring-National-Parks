@@ -1,90 +1,43 @@
-.home-page{
-    background-image : url("../HomePage/Assets/yosemite.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-.welcome{
-    /* margin-bottom: 20rem; */
-}
-.home-page .welcome-title{
-    margin: 0;
-    font-size: 10rem;
-}
-.home-page .welcome-text{
-    font-size: 1.5rem;
-    color:white;
-    background-color: rgba(0,0,0,0.5);
-}
-
-.home-page .homepage-button-wrapper{
-    display:flex;
-    align-items:center;
-    justify-content: space-evenly;
-
-}
-.home-page .homepage-button-wrapper .homepage-button{
-    font-size: 1.5rem;
-    height: 30%;
-    width: 100%;
-    margin: auto;
-    border-radius: 15px;
-}
-
-.home-page .homepage-button:hover {
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.button-container{
-    display:flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content: space-evenly;
-    margin-bottom: 1rem;
-
-}
-.button-container p{
-    font-size: 1.5rem;
-    color:white
-}
-
-/* highlighted parks section styling  */
-.gallery{
+/* Highlighted Parks Section Styling */
+.gallery {
     max-width: 100%;
-    /* margin: 15.4rem auto; */
-    background-color: rgba(0,0,0,0.5);
-    display:flex;
-    align-items:center;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
     justify-content: center;
     padding-right: 2rem;
 }
-.gallery h1{
+
+.gallery h1 {
     text-align: center;
     font-size: 5rem;
     color: white;
 }
-.slider{
+
+.slider {
     width: 80%;
-    min-height:50vh;
+    min-height: 50vh;
     color: white;
     text-align: center;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.slider .slide{
+
+.slider .slide {
     padding: 1rem;
     box-sizing: border-box;
-    min-height:50vh;
-    position:relative;
-}
-.slider img{
-    height: 50vh;
+    min-height: 50vh;
+    position: relative;
 }
 
-.slide h2{
+.slider img {
+    height: 50vh;
+    transition: filter 0.3s ease;
+}
+
+.slide h2 {
     font-size: 2rem;
     font-weight: bold;
     text-shadow: 2px 2px 4px black;
@@ -93,49 +46,52 @@
     align-items: center;
     justify-content: center;
 }
-.slider .slick-dots{
+
+/* Dots Styling */
+.slider .slick-dots {
     bottom: 13px;
 }
-.slider .slick-dots li button:before{
+
+.slider .slick-dots li button:before {
     color: white;
     font-size: 10px;
     line-height: 50px;
 }
-.slider .slick-dots li.slick-active button:before{
-    color: #a67e46
-}
-/* .slider .slick-prev:before, .slider .slick-next:before {
-    color:#a67e46;
-} */
 
-.more-info{
+.slider .slick-dots li.slick-active button:before {
+    color: #a67e46;
+}
+
+/* Button Styling */
+.more-info {
     position: absolute;
     right: 30%;
     bottom: 40%;
     width: 40%;
     border-radius: 15px;
-    display:none;
+    display: none; /* Initially hidden */
     font-family: "Times New Roman", Times, serif;
     font-size: larger;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effects */
+.slide:hover .more-info {
+    display: block; /* Show button on slide hover */
+}
+
+.slide:hover img {
+    filter: brightness(80%) blur(0.5px); /* Darken image slightly */
 }
 
 .more-info:hover {
-    background: white;
+    background-color: white;
+    color: black;
     font-weight: bold;
     cursor: pointer;
-}
-
-/* {
-    .more-info{
-        display:block;
-    }
-} */
-
-.slider .slick-slide:hover{
-    .more-info{
-        display:block;
-    }
-    .slide img{
-        filter:brightness(80%)blur(0.5px);
-    }
+    transform: scale(1.05);
 }
